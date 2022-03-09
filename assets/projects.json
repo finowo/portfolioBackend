@@ -1,76 +1,54 @@
 [
-    {
-        "id": 1,
-        "title": "vueDo",
-        "description": "My first Vue.js todo app",
-        "website": "",
-        "tags": [
-            "Vue"
-        ],
-        "images": [
-            "vuedo.png"
-        ],
-        "date": "2021",
-        "demo": "vue-do",
-        "links": {
-            "github": "https://github.com/finowo/vueDo"
-        }
-    },
-    {
-        "id": 2,
-        "title": "vueGiph",
-        "description": "Simple Vue Web-app that displays Gifs",
-        "website": "",
-        "tags": [
-            "Vue",
-            "Axios"
-        ],
-        "images": [
-            "vuegiph.png"
-        ],
-        "date": "2021",
-        "demo": "vue-giph",
-        "links": {
-            "github": "https://github.com/finowo/vueGiph"
-        }
-    },
-    {
-        "id": 3,
-        "title": "vueCountries",
-        "description": "Web-app With API integration for viewing Countries",
-        "website": "",
-        "tags": [
-            "Vue",
-            "Axios",
-            "API"
-        ],
-        "images": [
-            "vuecountries.png"
-        ],
-        "date": "2021",
-        "demo": "vue-countries",
-        "links": {
-            "github": "https://github.com/finowo/vueCountries"
-        }
-    },
-    {
-        "id": 4,
-        "title": "vueFestivals",
-        "description": "Web-app With integrated backend for viewing Festivals",
-        "website": "",
-        "tags": [
-            "Vue",
-            "Axios",
-            "API",
-            "Backend"
-        ],
-        "images": [
-            "vuefestivals.png"
-        ],
-        "date": "2021",
-        "demo": "vue-festival",
-        "links": {
-            "github": "https://github.com/finowo/vueFestivals"
-        }
-    }
+	{
+		"id": 1,
+		"title": "vueDo",
+		"description": "My first Vue.js todo app",
+		"website": "",
+		"tags": ["Vue"],
+		"images": ["vuedo.png"],
+		"date": "2021",
+		"demo": "vue-do",
+		"links": {
+			"github": "https://github.com/finowo/vueDo"
+		}
+	},
+	{
+		"id": 2,
+		"title": "vueGiph",
+		"description": "Simple Vue Web-app that displays Gifs",
+		"website": "",
+		"tags": ["Vue", "Axios"],
+		"images": ["vuegiph.png"],
+		"date": "2021",
+		"demo": "vue-giph",
+		"links": {
+			"github": "https://github.com/finowo/vueGiph"
+		}
+	},
+	{
+		"id": 3,
+		"title": "vueCountries",
+		"description": "Web-app With API integration for viewing Countries",
+		"website": "",
+		"tags": ["Vue", "Axios", "API"],
+		"images": ["vuecountries.png"],
+		"date": "2021",
+		"demo": "vue-countries",
+		"links": {
+			"github": "https://github.com/finowo/vueCountries"
+		}
+	},
+	{
+		"id": 4,
+		"title": "vueFestivals",
+		"description": "Web-app With integrated backend for viewing Festivals",
+		"website": "",
+		"tags": ["Vue", "Axios", "API", "Backend"],
+		"images": ["vuefestivals.png"],
+		"date": "2021",
+		"demo": "vue-festival",
+		"links": {
+			"github": "https://github.com/finowo/vueFestivals"
+		}
+	}
 ]

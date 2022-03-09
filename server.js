@@ -6,17 +6,15 @@ require("dotenv").config();
 require("./db")();
 
 const {
-    getAllProjects,
-    getSingleProject,
-    addProject,
+	getAllProjects,
+	getSingleProject,
+	addProject,
 } = require("./controllers/project_controller.js");
 const {
-    register,
-    login,
-    loginRequired
+	register,
+	login,
+	loginRequired,
 } = require("./controllers/user_controller.js");
-
-
 
 const port = process.env.PORT || 3000;
 
@@ -25,20 +23,24 @@ app.use(cors());
 app.use(express.json());
 
 app.use((req, res, next) => {
-    if (
-        req.headers &&
-        req.headers.authorization &&
-        req.headers.authorization.split(' ')[0] === 'Bearer'
-    ) {
-        jwt.verify(req.headers.authorization.split(' ')[1], 'login_example', (err, decode) => {
-            if (err) req.user = undefined
-            req.user = decode
-            next()
-        })
-    } else {
-        req.user = undefined
-        next()
-    }
+	if (
+		req.headers &&
+		req.headers.authorization &&
+		req.headers.authorization.split(" ")[0] === "Bearer"
+	) {
+		jwt.verify(
+			req.headers.authorization.split(" ")[1],
+			"login_example",
+			(err, decode) => {
+				if (err) req.user = undefined;
+				req.user = decode;
+				next();
+			}
+		);
+	} else {
+		req.user = undefined;
+		next();
+	}
 });
 
 ////////////////////ROUTES////////////////////
@@ -53,5 +55,5 @@ app.post("/login", login);
 /////////////////////////////////////////////
 
 app.listen(port, () => {
-    console.log(`App listening at http://localhost:${port}`);
+	console.log(`App listening at http://localhost:${port}`);
 });
