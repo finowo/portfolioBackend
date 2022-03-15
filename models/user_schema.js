@@ -1,6 +1,11 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 
+let validateEmail = function (email) {
+	let re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	return re.test(email);
+};
+
 const userSchema = new Schema(
 	{
 		full_name: {
@@ -14,6 +19,11 @@ const userSchema = new Schema(
 			lowercase: true,
 			trim: true,
 			required: [true, "email field is required"],
+			validate: [validateEmail, "Please fill a valid email address"],
+			match: [
+				/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+				"Please fill a valid email address",
+			],
 		},
 		password: {
 			type: String,
