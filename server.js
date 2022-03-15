@@ -15,6 +15,11 @@ const {
 	login,
 	loginRequired,
 } = require("./controllers/user_controller.js");
+const {
+	getAllFestivals,
+	addFestival,
+} = require("./controllers/festival_controller.js");
+const { getAllStages, addStage } = require("./controllers/stage_controller.js");
 
 const port = process.env.PORT || 3000;
 
@@ -51,6 +56,11 @@ app.post("/projects", loginRequired, addProject);
 
 app.post("/register", register);
 app.post("/login", login);
+
+app.get("/festivals", getAllFestivals);
+app.post("/festivals", addFestival);
+app.get("/stages", getStage);
+app.post("/stages", addStage);
 
 /////////////////////////////////////////////
 
