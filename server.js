@@ -18,6 +18,7 @@ const {
 const {
 	getAllFestivals,
 	addFestival,
+	editFestival,
 } = require("./controllers/festival_controller.js");
 const { getAllStages, addStage } = require("./controllers/stage_controller.js");
 
@@ -59,7 +60,8 @@ app.post("/login", login);
 
 app.get("/festivals", getAllFestivals);
 app.post("/festivals", addFestival);
-app.get("/stages", getStage);
+app.put("/festivals/:id", editFestival);
+app.get("/stages", getAllStages);
 app.post("/stages", addStage);
 
 /////////////////////////////////////////////

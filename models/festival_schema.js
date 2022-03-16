@@ -25,6 +25,11 @@ const festivalSchema = new Schema(
 		image_path: {
 			type: String,
 		},
+		stages: {
+			type: [Schema.Types.ObjectId],
+			ref: "Stage",
+			required: [true, "stage field is required"],
+		},
 	},
 	{
 		timestamps: true,

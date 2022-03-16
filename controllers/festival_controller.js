@@ -2,6 +2,7 @@ const Festival = require("../models/festival_schema");
 
 const getAllFestivals = (req, res) => {
 	Festival.find()
+		.populate("stages")
 		.then((data) => {
 			if (data) {
 				res.status(200).json(data);
@@ -33,7 +34,29 @@ const addFestival = (req, res) => {
 		});
 };
 
+const editFestival = (req, res) => {
+	let festivalData = req.body;
+
+	Festival.findByIdAndUpdate(req.params.id, festivalData, {
+		new: true,
+	})
+		.then((data) => {
+			if (data) {
+				res.status(201).json(data);
+			}
+		})
+		.catch((err) => {
+			if (err.name === "ValidaitonError") {
+				res.status(422).json(err);
+			} else {
+				console.error(err);
+				res.status(500).json(err);
+			}
+		});
+};
+
 module.exports = {
 	getAllFestivals,
 	addFestival,
+	editFestival,
 };

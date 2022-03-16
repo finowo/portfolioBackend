@@ -1,7 +1,9 @@
 const Stage = require("../models/stage_schema");
+const Festival = require("../models/festival_schema");
 
 const getAllStages = (req, res) => {
-	Festival.find()
+	Stage.find()
+		.populate("festival")
 		.then((data) => {
 			if (data) {
 				res.status(200).json(data);
@@ -17,9 +19,22 @@ const getAllStages = (req, res) => {
 const addStage = (req, res) => {
 	let stageData = req.body;
 
-	Stage.create(festivalData)
+	Stage.create(stageData)
 		.then((data) => {
 			if (data) {
+				Festival.findByIdAndUpdate(
+					{
+						_id: data.festival,
+					},
+					{
+						$push: { stages: data._id },
+					},
+					(error, success) => {
+						if (error) {
+							res.status(500).json(err);
+						}
+					}
+				);
 				res.status(201).json(data);
 			}
 		})
